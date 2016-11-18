@@ -1,0 +1,118 @@
+@import './';
+
+@mixin simple-rwd-container($devices...) {
+
+  // # Validation
+  $validation-error: false;
+
+  // ## Width of container must more than (>) previous device.
+  @if $simple-rwd-container-m <= 0 { $validation-error: true; }
+
+  @if $simple-rwd-container-tb <= $simple-rwd-container-m { $validation-error: true; }
+
+  @if $simple-rwd-container-pc <= $simple-rwd-container-tb { $validation-error: true; }
+
+  @if $simple-rwd-container-hd <= $simple-rwd-container-pc { $validation-error: true; }
+
+  // ## Width of container must less than (<=) breakpoint.
+  @if $simple-rwd-container-m > $simple-rwd-breakpoint-m { $validation-error: true; }
+
+  @if $simple-rwd-container-tb > $simple-rwd-breakpoint-tb { $validation-error: true; }
+
+  @if $simple-rwd-container-pc > $simple-rwd-breakpoint-pc { $validation-error: true; }
+
+  @if $simple-rwd-container-hd > $simple-rwd-breakpoint-hd { $validation-error: true; }
+
+  // # Error Exception
+  @if $validation-error {
+    /* Simple-RWD-Wide Error: please check the configuration. */
+  }
+
+  // # Execution
+  @else {
+    // ## Figure out how many devices.
+    $m: false;
+    $tb: false;
+    $pc: false;
+    $hd: false;
+
+    @each $device in $devices {
+      @if $device == m { $m: true; }
+
+      @else if $device == tb { $tb: true; }
+
+      @else if $device == pc { $pc: true; }
+
+      @else if $device == hd { $hd: true; }
+    }
+
+    @if $m == false and $tb == false and $pc == false and $hd == false {
+      $m: true;
+      $tb: true;
+      $pc: true;
+      $hd: true;
+    }
+
+    // ## Basic css.
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+
+    &::before,
+    &::after {
+      display: block;
+      content: '';
+      overflow: auto;
+    }
+
+    // ## Define the width.
+    @include simple-rwd(m) {
+      @if $m {
+        width: $simple-rwd-container-m * 1px;
+      }
+    }
+
+    @include simple-rwd(tb) {
+      @if $tb {
+        width: $simple-rwd-container-tb * 1px;
+      }
+
+      @else if $m {
+        width: $simple-rwd-container-m * 1px;
+      }
+    }
+
+    @include simple-rwd(pc) {
+      @if $pc {
+        width: $simple-rwd-container-pc * 1px;
+      }
+
+      @else if $tb {
+        width: $simple-rwd-container-tb * 1px;
+      }
+
+      @else if $m {
+        width: $simple-rwd-container-m * 1px;
+      }
+    }
+
+    @include simple-rwd(hd) {
+      @if $hd {
+        width: $simple-rwd-container-hd * 1px;
+      }
+
+      @else if $pc {
+        width: $simple-rwd-container-pc * 1px;
+      }
+
+      @else if $tb {
+        width: $simple-rwd-container-tb * 1px;
+      }
+
+      @else if $m {
+        width: $simple-rwd-container-m * 1px;
+      }
+    }
+  }
+}

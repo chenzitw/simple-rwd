@@ -1,0 +1,127 @@
+// # Configuration
+
+// ## Breakpoint
+$simple-rwd-breakpoint-m: 320 !default;
+$simple-rwd-breakpoint-tb: 768 !default;
+$simple-rwd-breakpoint-pc: 992 !default;
+$simple-rwd-breakpoint-hd: 1200 !default;
+
+// ## Container
+$simple-rwd-container-m: 320 !default;
+$simple-rwd-container-tb: 720 !default;
+$simple-rwd-container-pc: 960 !default;
+$simple-rwd-container-hd: 1140 !default;
+
+@mixin simple-rwd($devices...) {
+
+  // # Validation
+  $validation-error: false;
+
+  @if $simple-rwd-breakpoint-m <= 0 { $validation-error: true; }
+
+  @if $simple-rwd-breakpoint-tb <= $simple-rwd-breakpoint-m { $validation-error: true; }
+
+  @if $simple-rwd-breakpoint-pc <= $simple-rwd-breakpoint-tb { $validation-error: true; }
+
+  @if $simple-rwd-breakpoint-hd <= $simple-rwd-breakpoint-pc { $validation-error: true; }
+
+  // # Error Exception
+  @if $validation-error {
+    /* Simple-RWD Error: please check the configuration. */
+    @content;
+  }
+
+  // # Execution
+  @else {
+    // ## Figure out how many devices.
+    $s: false;
+    $m: false;
+    $tb: false;
+    $pc: false;
+    $hd: false;
+
+    @each $device in $devices {
+      @if $device == s { $s: true; }
+
+      @else if $device == m { $m: true; }
+
+      @else if $device == sm { $s: true; $m: true; }
+
+      @else if $device == tb { $tb: true; }
+
+      @else if $device == pc { $pc: true; }
+
+      @else if $device == hd { $hd: true; }
+    }
+
+    // ## Arrange the ranges.
+    $ranges: ();
+
+    @if $s {
+      $ranges: append($ranges, (min ($simple-rwd-breakpoint-m - 1)));
+    }
+
+    @if $m {
+      $ranges: append($ranges, ($simple-rwd-breakpoint-m ($simple-rwd-breakpoint-tb - 1)));
+    }
+
+    @if $tb {
+      $ranges: append($ranges, ($simple-rwd-breakpoint-tb ($simple-rwd-breakpoint-pc - 1)));
+    }
+
+    @if $pc {
+      $ranges: append($ranges, ($simple-rwd-breakpoint-pc ($simple-rwd-breakpoint-hd - 1)));
+    }
+
+    @if $hd {
+      $ranges: append($ranges, ($simple-rwd-breakpoint-hd max));
+    }
+
+    // ## Concatenate the media query string
+    $min: 0;
+    $max: 0;
+    $query: '';
+
+    @each $range in $ranges {
+      @if $max != (nth($range, 1) - 1) { // 非連續，考慮承認前段
+        @if $max != 0 { // 前段不為空，須承認前段
+          @if $min != min {
+            $query: $query + '(min-width: #{$min * 1px})';
+          }
+
+          @if $min != min and $max != max {
+            $query: $query + ' and ';
+          }
+
+          @if $max != max {
+            $query: $query + '(max-width: #{$max * 1px})';
+          }
+          $query: $query + ', ';
+        }
+        $min: nth($range, 1);
+      }
+      $max: nth($range, 2);
+    }
+
+    @if $max != 0 { // 前段不為空，須承認前段
+      @if $min != min {
+        $query: $query + '(min-width: #{$min * 1px})';
+      }
+
+      @if $min != min and $max != max {
+        $query: $query + ' and ';
+      }
+
+      @if $max != max {
+        $query: $query + '(max-width: #{$max * 1px})';
+      }
+    }
+
+    // ## Export sass script
+    @if $query != '' {
+      @media #{$query} {
+        @content;
+      }
+    }
+  }
+}

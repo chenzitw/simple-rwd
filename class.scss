@@ -1,0 +1,126 @@
+@import './';
+
+.simple-rwd {
+  &:not(.container) {
+    @include simple-rwd(s) {
+      &.hide.s,
+      &:not(.hide):not(.s).m,
+      &.hide.sm,
+      &:not(.hide):not(.s):not(.sm).tb,
+      &:not(.hide):not(.s):not(.sm).pc,
+      &:not(.hide):not(.s):not(.sm).hd {
+        display: none;
+      }
+    }
+
+    @include simple-rwd(m) {
+      &:not(.hide):not(.m).s,
+      &.hide.m,
+      &.hide.sm,
+      &:not(.hide):not(.m):not(.sm).tb,
+      &:not(.hide):not(.m):not(.sm).pc,
+      &:not(.hide):not(.m):not(.sm).hd {
+        display: none;
+      }
+    }
+
+    @include simple-rwd(tb) {
+      &:not(.hide):not(.tb).s,
+      &:not(.hide):not(.tb).m,
+      &:not(.hide):not(.tb).sm,
+      &.hide.tb,
+      &:not(.hide):not(.tb).pc,
+      &:not(.hide):not(.tb).hd {
+        display: none;
+      }
+    }
+
+    @include simple-rwd(pc) {
+      &:not(.hide):not(.pc).s,
+      &:not(.hide):not(.pc).m,
+      &:not(.hide):not(.pc).sm,
+      &:not(.hide):not(.pc).tb,
+      &.hide.pc,
+      &:not(.hide):not(.pc).hd {
+        display: none;
+      }
+    }
+
+    @include simple-rwd(hd) {
+      &:not(.hide):not(.hd).s,
+      &:not(.hide):not(.hd).m,
+      &:not(.hide):not(.hd).sm,
+      &:not(.hide):not(.hd).tb,
+      &:not(.hide):not(.hd).pc,
+      &.hide.hd {
+        display: none;
+      }
+    }
+  }
+
+  &.container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+
+    &::before,
+    &::after {
+      display: block;
+      content: '';
+      overflow: auto;
+    }
+
+    @include simple-rwd(m) {
+      &.m,
+      &:not(.m):not(.tb):not(.pc):not(.hd) {
+        width: $simple-rwd-container-m * 1px;
+      }
+    }
+
+    @include simple-rwd(tb) {
+      &.m:not(.tb) {
+        width: $simple-rwd-container-m * 1px;
+      }
+
+      &.tb,
+      &:not(.m):not(.tb):not(.pc):not(.hd) {
+        width: $simple-rwd-container-tb * 1px;
+      }
+    }
+
+    @include simple-rwd(pc) {
+      &.m:not(.tb):not(.pc) {
+        width: $simple-rwd-container-m * 1px;
+      }
+
+      &.tb:not(.pc) {
+        width: $simple-rwd-container-tb * 1px;
+      }
+
+      &.pc,
+      &:not(.m):not(.tb):not(.pc):not(.hd) {
+        width: $simple-rwd-container-pc * 1px;
+      }
+    }
+
+    @include simple-rwd(hd) {
+      &.m:not(.tb):not(.pc):not(.hd) {
+        width: $simple-rwd-container-m * 1px;
+      }
+
+      &.tb:not(.pc):not(.hd) {
+        width: $simple-rwd-container-tb * 1px;
+      }
+
+      &.pc:not(.hd) {
+        width: $simple-rwd-container-pc * 1px;
+      }
+
+      &.hd,
+      &:not(.m):not(.tb):not(.pc):not(.hd) {
+        width: $simple-rwd-container-hd * 1px;
+      }
+    }
+  }
+}
