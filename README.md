@@ -1,15 +1,17 @@
 # Simple-RWD
 Very simple way for making Responsive Web Design.
-Made by ChenZi in Taiwan.
+Made in Taiwan, ray of sunshine!
+
+:earth_asia: [*English*](README.md) [中文](README.zh-tw.md)
 
 ## Overview
 It's all about "Device", "Breakpoint" and "Container" below.
 
 ### Device
 There are 5 devices and 1 schortcut:
-- s: Small
+- s: Small (unusual device)
 - m: Mobile
-- sm: Equal to s & m. Shortcut for small and mobile both.
+- sm: Shortcut for small and mobile both (equal to s & m)
 - tb: Tablet
 - pc: Normal screen of computer or notebook
 - hd: HD screen of computer or notebook
@@ -35,4 +37,4 @@ To be continued...
 To be continued...
 
 ## License
-DO WHAT THE FUCK YOU WANT TO PUBLIC (Version 2, December 2004)
+DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE (Version 2, December 2004)
