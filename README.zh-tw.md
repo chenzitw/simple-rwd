@@ -1,5 +1,6 @@
 # Simple-RWD
 打造 RWD 網頁的極簡之道。
+
 臺灣製造，舉世之傲！
 
 :earth_asia: [**中文**](README.zh-tw.md) [English](README.md)
