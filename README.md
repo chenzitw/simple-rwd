@@ -2,7 +2,7 @@
 Very simple way for making Responsive Web Design.
 Made in Taiwan, ray of sunshine!
 
-:earth_asia: [*English*](README.md) [中文](README.zh-tw.md)
+:earth_asia: [**English**](README.md) [中文](README.zh-tw.md)
 
 ## Overview
 It's all about "Device", "Breakpoint" and "Container" below.

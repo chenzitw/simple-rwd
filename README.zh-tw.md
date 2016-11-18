@@ -2,7 +2,7 @@
 打造 RWD 網頁的極簡之道。
 臺灣製造，舉世之傲！
 
-:earth_asia: [*中文*](README.zh-tw.md) [English](README.md)
+:earth_asia: [**中文**](README.zh-tw.md) [English](README.md)
 
 ## 概述
 旨在「裝置」、「斷點」與「活匣」如後載。
