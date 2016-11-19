@@ -35,3 +35,15 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# Visual Studio Code configuration
+.vscode
+
+# Yarn lock file
+yarn.lock
+
+# Source files
+src
+.stylelintrc
+package.json
+webpack.config.js
