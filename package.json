@@ -1,9 +1,9 @@
 {
   "name": "simple-rwd",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Very simple way for making Responsive Web Design.",
   "repository": {
-    "url": "https://github.com/chenzitw/Simple-RWD.git",
+    "url": "https://github.com/chenzitw/simple-rwd.git",
     "type": "git"
   },
   "author": "MangoChen <chenzi.tw@gmail.com>",
