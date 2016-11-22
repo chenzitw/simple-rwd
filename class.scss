@@ -3,56 +3,38 @@
 .simple-rwd {
   &:not(.container) {
     @include simple-rwd(s) {
-      &.hide.s,
-      &:not(.hide):not(.s).m,
-      &.hide.sm,
-      &:not(.hide):not(.s):not(.sm).tb,
-      &:not(.hide):not(.s):not(.sm).pc,
-      &:not(.hide):not(.s):not(.sm).hd {
+      &.hide:not(.show).s,
+      &.hide:not(.show).sm,
+      &.show:not(.hide):not(.s):not(.sm) {
         display: none;
       }
     }
 
     @include simple-rwd(m) {
-      &:not(.hide):not(.m).s,
       &.hide.m,
       &.hide.sm,
-      &:not(.hide):not(.m):not(.sm).tb,
-      &:not(.hide):not(.m):not(.sm).pc,
-      &:not(.hide):not(.m):not(.sm).hd {
+      &.show:not(.hide):not(.m):not(.sm) {
         display: none;
       }
     }
 
     @include simple-rwd(tb) {
-      &:not(.hide):not(.tb).s,
-      &:not(.hide):not(.tb).m,
-      &:not(.hide):not(.tb).sm,
       &.hide.tb,
-      &:not(.hide):not(.tb).pc,
-      &:not(.hide):not(.tb).hd {
+      &.show:not(.hide):not(.tb) {
         display: none;
       }
     }
 
     @include simple-rwd(pc) {
-      &:not(.hide):not(.pc).s,
-      &:not(.hide):not(.pc).m,
-      &:not(.hide):not(.pc).sm,
-      &:not(.hide):not(.pc).tb,
       &.hide.pc,
-      &:not(.hide):not(.pc).hd {
+      &.show:not(.hide):not(.pc) {
         display: none;
       }
     }
 
     @include simple-rwd(hd) {
-      &:not(.hide):not(.hd).s,
-      &:not(.hide):not(.hd).m,
-      &:not(.hide):not(.hd).sm,
-      &:not(.hide):not(.hd).tb,
-      &:not(.hide):not(.hd).pc,
-      &.hide.hd {
+      &.hide.hd,
+      &.show:not(.hide):not(.hd) {
         display: none;
       }
     }

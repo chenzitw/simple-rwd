@@ -143,14 +143,17 @@ Here are two ways to import:
 It is very simple to show or hide on multiple devices.  
 Just add the class on the element.
 
-For showing: `<el class="simple-rwd tb xpc" />`
+For showing: `<el class="simple-rwd show tb hd" />`  
+The element will be shown in devices `tb` and `hd`.
 
-For hiding: `<el class="simple-rwd hide sm pc" />`
+
+For hiding: `<el class="simple-rwd hide sm pc" />`  
+The element will be hidden in devices `sm` and `pc`.
 
 #### Container
 It is also very simple to make a fixed width container centered horizontally for wrapping content.
 
-Just add the class on the element: `<div class="simple-rwd container tb pc xpc">`
+Just add the class on the element: `<div class="simple-rwd container tb pc hd">`
 
 ## Demo
 Visit the [Demo](https://chenzitw.github.io/simple-rwd/demo/).

@@ -112,7 +112,7 @@
 }
 ```
 
-#### Custom
+#### 訂製
 你能輕鬆覆寫配置。  
 只要在引入核心集成式後更改下列變數的值：
 
@@ -136,21 +136,24 @@ $simple-rwd-container-hd: 1140;
 你能使用類別來輕鬆打造適應網頁設計。  
 有兩種方法引入：
 
-1. 直接連結 CSS 檔：`<link href="simple-rwd-class.css" rel="stylesheet">`
-2. 在 SASS 中引入：`@import './node_modules/simple-rwd/class.scss';`
+一、直接連結 CSS 檔：`<link href="simple-rwd-class.css" rel="stylesheet">`
+二、在 SASS 中引入：`@import './node_modules/simple-rwd/class.scss';`
 
 #### 隱現
 在多重裝置上現形或隱形真的很簡單。  
 只要為元素加上類別。
 
-現形：`<el class="simple-rwd tb xpc" />`
+現形：`<el class="simple-rwd show tb hd" />`  
+The element will be shown in devices `tb` and `hd`.
+此元素會在裝置 `tb` 與 `hd` 中現形。
 
 隱形：`<el class="simple-rwd hide sm pc" />`
+此元素會在裝置 `sm` 與 `pc` 中隱形。
 
 #### 活匣
 打造水平置中的定寬活匣也是真的很簡單。
 
-只要為元素加上類別：`<div class="simple-rwd container tb pc xpc">`
+只要為元素加上類別：`<div class="simple-rwd container tb pc hd">`
 
 ## 示範
 瀏覽[示範](https://chenzitw.github.io/simple-rwd/demo/)。
