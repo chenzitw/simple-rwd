@@ -163,4 +163,4 @@ Visit the [Demo](https://chenzitw.github.io/simple-rwd/demo/).
 
 ----
 
-Made in Taiwan, ray of sunshine!
+> Made in Taiwan, ray of sunshine!
