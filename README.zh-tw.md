@@ -160,4 +160,4 @@ $simple-rwd-container-hd: 1140;
 ## 憑證
 [要衝啥小隨你公眾憑證](https://github.com/chenzitw/simple-rwd/blob/master/LICENSE)
 
-<p style="text-align: right;">臺灣製造，舉世之傲！</p>
+<p align="right">臺灣製造，舉世之傲！</p>

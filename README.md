@@ -161,4 +161,4 @@ Visit the [Demo](https://chenzitw.github.io/simple-rwd/demo/).
 ## License
 [DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE](https://github.com/chenzitw/simple-rwd/blob/master/LICENSE)
 
-<p style="text-align: right;">Made in Taiwan, ray of sunshine!</p>
+<p align="right">Made in Taiwan, ray of sunshine!</p>
