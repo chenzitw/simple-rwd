@@ -39,5 +39,8 @@ jspm_packages
 # Visual Studio Code configuration
 .vscode
 
+# NPM lock file
+package-lock.json
+
 # Yarn lock file
 yarn.lock
