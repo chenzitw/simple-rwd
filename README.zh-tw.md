@@ -45,7 +45,7 @@
 #### simple-rwd()
 使用 CSS 的媒體查詢真的很簡單。
 
-首先引入核心集成式：`@import './node_modules/simple-rwd/';`
+首先引入核心集成式：`@import '~simple-rwd';`
 
 接著以裝置為參數呼叫集成式。
 
@@ -70,7 +70,7 @@
 #### simple-rwd-container()
 打造水平置中的定寬活匣也是真的很簡單。
 
-首先引入活匣集成式：`@import './node_modules/simple-rwd/container.scss';`
+首先引入活匣集成式：`@import '~simple-rwd/_container.scss';`
 
 接著以想要的裝置為參數呼叫集成式。
 
@@ -117,7 +117,7 @@
 只要在引入核心集成式後更改下列變數的值：
 
 ```scss
-@import './node_modules/simple-rwd/container.scss';
+@import '~simple-rwd/_container.scss';
 
 $simple-rwd-breakpoint-m: 320;
 $simple-rwd-breakpoint-tb: 768;
@@ -137,7 +137,7 @@ $simple-rwd-container-hd: 1140;
 有兩種方法引入：
 
 1. 直接連結 CSS 檔：`<link href="simple-rwd-class.css" rel="stylesheet">`  
-2. 在 SASS 中引入：`@import './node_modules/simple-rwd/class.scss';`
+2. 在 SASS 中引入：`@import '~simple-rwd/class.scss';`
 
 #### 隱現
 在多重裝置上現形或隱形真的很簡單。  

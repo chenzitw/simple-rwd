@@ -45,7 +45,7 @@ You can use these two mixin for making RWD simply.
 #### simple-rwd()
 It is very simple to use CSS media queries.
 
-First, import the core mixin: `@import './node_modules/simple-rwd/';`
+First, import the core mixin: `@import '~simple-rwd';`
 
 Then, call the mixin with devices as arguments.
 
@@ -70,7 +70,7 @@ Finally, you will get the result with media query.
 #### simple-rwd-container()
 It is also very simple to make a fixed width container centered horizontally.
 
-First, import the container mixin: `@import './node_modules/simple-rwd/container.scss';`
+First, import the container mixin: `@import '~simple-rwd/_container.scss';`
 
 Then, call the mixin with devices you want as arguments.
 
@@ -117,7 +117,7 @@ You can override the configuration simply.
 Just change the value of variables below after importing core mixin:
 
 ```scss
-@import './node_modules/simple-rwd/container.scss';
+@import '~simple-rwd/_container.scss';
 
 $simple-rwd-breakpoint-m: 320;
 $simple-rwd-breakpoint-tb: 768;
@@ -137,7 +137,7 @@ You can use class for making RWD simply.
 Here are two ways to import:
 
 1. Link CSS file directly: `<link href="simple-rwd-class.css" rel="stylesheet">`
-2. Import in SASS: `@import './node_modules/simple-rwd/class.scss';`
+2. Import in SASS: `@import '~simple-rwd/class.scss';`
 
 #### Visible
 It is very simple to show or hide on multiple devices.  
