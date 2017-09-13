@@ -11,8 +11,9 @@
   "scripts": {
     "build": "node build.js"
   },
-  "style": "class.css",
+  "main": "_.scss",
   "sass": "_.scss",
+  "style": "class.css",
   "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.5.3",
